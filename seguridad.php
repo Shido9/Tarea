@@ -14,15 +14,14 @@
       echo 'Ya lo rompiste';
     else
     {
-      $pimienta = ord($_POST['pal']);//3
+      $pimienta = ord($_POST['pal']);//3.
       if (strlen($pimienta)!=3)
         $pimienta = $pimienta.'0';
-      $sal = array('a'=>'22', 'e'=>'05','i'=>'20','o'=>'01','u'=>'78');
-      $ca=strtr($_POST['pal'],$sal);
-      $carnita =str_split($ca,5);
-      $ajo = $pimienta;
-      //echo $sal['0'].$pimienta.$.$sal['1'];
-      echo $carnita['0'].'  '.$carnita['5'];
+      $ajo = array('a'=>'22', 'e'=>'05','i'=>'20','o'=>'01','u'=>'78');
+      $ca=strtr($_POST['pal'],$ajo);
+      $sal = str_split($ca,5);//[0]->5.
+      $carnita = $pimienta.$sal['0'];
+      echo $carnita;
     }
     ?>
   </body>
